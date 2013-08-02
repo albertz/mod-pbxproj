@@ -4,3 +4,6 @@
 
 # Mac OS X cruft
 .DS_Store
+
+# other stuff
+.*.swp
