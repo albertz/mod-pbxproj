@@ -794,7 +794,7 @@ class XcodeProject(PBXDict):
 
         return self.add_file(f_path, parent, tree, create_build_files, weak, ignore_unknown_type=ignore_unknown_type)
 
-    def add_file(self, f_path, parent=None, tree='SOURCE_ROOT', create_build_files=True, weak=False, ignore_unknown_type=False):
+    def add_file(self, f_path, parent=None, tree='SOURCE_ROOT', create_build_files=True, weak=False, ignore_unknown_type=False, compiler_flags=()):
         results = []
         abs_path = ''
 
@@ -824,6 +824,8 @@ class XcodeProject(PBXDict):
 
             for phase in phases:
                 build_file = PBXBuildFile.Create(file_ref, weak=weak)
+                for flag in compiler_flags:
+                    build_file.add_compiler_flag(flag)
 
                 phase.add_build_file(build_file)
                 results.append(build_file)
