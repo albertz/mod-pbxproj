@@ -161,6 +161,7 @@ class PBXFileReference(PBXType):
         '.m': ('sourcecode.c.objc', 'PBXSourcesBuildPhase'),
         '.j': ('sourcecode.c.objc', 'PBXSourcesBuildPhase'),
         '.mm': ('sourcecode.cpp.objcpp', 'PBXSourcesBuildPhase'),
+        '.S': ('sourcecode.asm', 'PBXSourcesBuildPhase'),
         '.nib': ('wrapper.nib', 'PBXResourcesBuildPhase'),
         '.plist': ('text.plist.xml', 'PBXResourcesBuildPhase'),
         '.json': ('text.json', 'PBXResourcesBuildPhase'),
